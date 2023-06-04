@@ -1,0 +1,79 @@
+{% load compress %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}" />
+    {% endcompress %}
+  </head>
+  <body>
+    <div class="container mx-auto flex flex-col h-full">
+      <h1 class="text-xl font-semibold mb-4">Event Schedule</h1>
+
+      <div class="event-schedule grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="event">
+          <h2 class="text-lg font-semibold mb-2">The Future of Web Design</h2>
+          <p class="text-gray-500 mb-4">
+            Join us for a discussion on the future of web design with some of
+            the leading experts in the field.
+          </p>
+          <ul class="list-reset">
+            <li class="py-2">
+              <strong>Speakers:</strong>
+              <ul>
+                <li>John Doe, CEO of Acme Design</li>
+                <li>Jane Doe, Founder of Doe Design</li>
+              </ul>
+            </li>
+            <li class="py-2">
+              <strong>Sponsors:</strong>
+              <ul>
+                <li>Acme Design</li>
+                <li>Doe Design</li>
+              </ul>
+            </li>
+          </ul>
+          <a href="/event/future-of-web-design" class="btn btn-primary"
+            >Learn more</a
+          >
+        </div>
+
+        <div class="event">
+          <h2 class="text-lg font-semibold mb-2">
+            Building a Better User Experience
+          </h2>
+          <p class="text-gray-500 mb-4">
+            Learn how to build better user experiences with a focus on
+            usability, accessibility, and design.
+          </p>
+          <ul class="list-reset">
+            <li class="py-2">
+              <strong>Speakers:</strong>
+              <ul>
+                <li>John Smith, UX Designer at Google</li>
+                <li>Jane Doe, UI Designer at Apple</li>
+              </ul>
+            </li>
+            <li class="py-2">
+              <strong>Sponsors:</strong>
+              <ul>
+                <li>Google</li>
+                <li>Apple</li>
+              </ul>
+            </li>
+          </ul>
+          <a
+            href="/event/building-a-better-user-experience"
+            class="btn btn-primary"
+            >Learn more</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
